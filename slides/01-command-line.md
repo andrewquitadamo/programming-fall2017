@@ -19,8 +19,7 @@ They are commands I've found useful, and is by no means an exhaustive list.
 **Instructions**  
 To follow along copy and paste 
 ```
-wget https://github.com/andrewquitadamo/bioinformatics-skills/archive/master.zip \
-&& unzip master.zip && cd bioinformatics-skills-master/data/01-command-line/
+curl -LOk https://github.com/andrewquitadamo/programming-spring2017/archive/master.zip && unzip master.zip && cd programming-spring2017-master/data/
 ``` 
 into your terminal.
  
