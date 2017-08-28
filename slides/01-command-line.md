@@ -522,7 +522,7 @@ ssh username@server.address
 
 Example:
 ```
-ssh username@viper.urc.uncc.edu
+ssh username@mamba.urc.uncc.edu
 ```  
 
 ---
@@ -544,10 +544,6 @@ Download file:
 ```
 wget ftp://url/path/to/file
 ```  
-
---
-**Instructions**
-Use `wget` to download the chromosome Y FASTA file from `ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chrY.fa.gz` 
 
 ---
 
