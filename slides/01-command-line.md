@@ -42,7 +42,7 @@ Use `pwd` in your current directory.
 The results should look something like:  
 
 ```
-/Users/andrewquitadamo/bioinf-ds/bioinformatics-skills-master/data/01-command-line
+/Users/andrewquitadamo/Development/repos/programming-fall2017/data/
 ```  
 
 ---
