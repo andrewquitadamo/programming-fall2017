@@ -79,7 +79,6 @@ class: center, middle
 ---
 
 ###The Zen of Python
-
 ```
 import this
 ```  
@@ -185,7 +184,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 ###Interactive Prompt (cont.)
 
 * The output of your expressions will be displayed below the command
-
 ```
 >>>print('hello world!')
 hello world!
@@ -196,7 +194,6 @@ hello world!
 --
 
 * Compound statements need to be ended with an extra blank line
-
 ```
 >>> for x in 'spam':
 ...     print(x)
@@ -313,7 +310,6 @@ multiline comment.
 ###Module Imports
 
 * You can import any script into the python interpreter
-
 ```
 >>>import script
 darwin
@@ -355,7 +351,6 @@ name = Andrew
 --
 
 * Go to the interpreter and reload script.py
-
 ```
 >>> import script
 >>> script.name
