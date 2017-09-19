@@ -315,11 +315,13 @@ line.rstrip().split()
 >>> L
 [1, 2, 3, 'a', 'b']
 ```
+
 --
 ```
 >>> L[0]
 1
 ```
+
 --
 ```
 >>> L[3:]
@@ -334,6 +336,7 @@ Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
 IndexError: list index out of range
 ```
+
 --
 ```
 >>> L[100]=98
