@@ -426,7 +426,3 @@ StopIteration
 --
 
 * In Python 2 the `list()` surrounding the `map` isn't necessary
-
----
-
-
