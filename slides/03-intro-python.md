@@ -382,6 +382,8 @@ dir(script)
 
 * This will become important in OO programming
 
---
+---
 
 ###Quitting
+
+* To exit the interactive interpreter either use `quit()`, `exit()`, or `CTRL-D`
