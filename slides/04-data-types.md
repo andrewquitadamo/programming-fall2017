@@ -196,6 +196,7 @@ TypeError: 'str' object does not support item assignment
 ---
 
 ###String Specific Methods
+
 --
 ```
 >>> S.find('pa')
