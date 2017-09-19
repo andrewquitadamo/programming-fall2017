@@ -330,7 +330,6 @@ Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
 * You can use the `reload` module to repeat imports and reload code
 
 --
-
 ```
 from imp import reload
 reload(script)
