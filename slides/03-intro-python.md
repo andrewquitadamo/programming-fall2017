@@ -112,7 +112,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ### Python Interpreter
 
-.center[<img src="http://pclib.github.io/safari/program/learning-python/Text/httpatomoreillycomsourceoreillyimages1695840.png" style="max-width:75%; height:auto"/>]
+.center[<img src="https://pclib.github.io/safari/program/learning-python/Text/httpatomoreillycomsourceoreillyimages1695840.png" style="max-width:75%; height:auto"/>]
 
 ---
 
