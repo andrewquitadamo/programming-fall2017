@@ -106,7 +106,6 @@ FUNCTIONS
 --
 
 * String Basics
-
 ```
 >>> S = 'Spam'
 >>> len(S)
@@ -116,7 +115,6 @@ FUNCTIONS
 --
 
 * Indexing 
-
 ```
 >>> len(S)
 4
@@ -153,7 +151,6 @@ FUNCTIONS
 --
 
 * Concatenation
-
 ```
 >>> S + 'alot'
 'Spamalot'
@@ -170,6 +167,7 @@ FUNCTIONS
 ---
 
 ###Immutability
+--
 ```
 >>> S[0]='s'
 Traceback (most recent call last):
@@ -197,7 +195,7 @@ TypeError: 'str' object does not support item assignment
 ---
 
 ###String Specific Methods
-
+--
 ```
 >>> S.find('pa')
 1
@@ -208,7 +206,6 @@ TypeError: 'str' object does not support item assignment
 ```
 
 --
-
 ```
 >>> line = 'BI_GS_DEL1_B5_P2682_257\tENSG00000188000.2\t-50.0350478013566\t  
 2.19054140417393e-184\t3.06305595087044e-179\t-0.242246304080066'
@@ -219,6 +216,7 @@ TypeError: 'str' object does not support item assignment
 ['BI_GS_DEL1_B5_P2682_257', 'ENSG00000188000.2', '-50.0350478013566',  
 '2.19054140417393e-184', '3.06305595087044e-179', '-0.242246304080066']
 ```
+--
 
 * Escaped characters `\t` is tab, `\n` is newline, `\r` is carriage return, `\\` is backslash
 
@@ -285,7 +283,6 @@ line.rstrip().split()
 * `re` module
 
 --
-
 ```
 >>> S = 'Spam'
 >>> re.search('pa',S)
@@ -311,7 +308,6 @@ line.rstrip().split()
 * Lists are mutable, and can be modified in place
 
 --
-
 ```
 >>> L = [1,2,3,'a','b']
 >>> L
@@ -330,7 +326,6 @@ line.rstrip().split()
 
 --
 * List bounding issues
-
 ```
 >>> L[100]
 Traceback (most recent call last):
@@ -352,7 +347,6 @@ IndexError: list assignment index out of range
 * Lists can contain lists
 
 --
-
 ```
 >>> L = [[1,2,3],[4,5,6],[7,8,9]]
 >>> L
@@ -362,14 +356,12 @@ IndexError: list assignment index out of range
 --
 
 * Indexing Nested Lists
-
 ```
 >>> L[0]
 [1, 2, 3]
 ```
 
 --
-
 ```
 >>> L[0][2]
 3
@@ -382,7 +374,6 @@ IndexError: list assignment index out of range
 * List comprehensions can build new lists by processing another list
 
 --
-
 ```
 >>> [row[1] for row in L]
 [2, 5, 8]
@@ -393,7 +384,6 @@ IndexError: list assignment index out of range
 --
 
 * You can use `if` statements with list comprehensions
-
 ```
 >>> [row[1]*2 for row in L if row[1] % 2 == 0]
 [4, 16]
@@ -423,7 +413,6 @@ StopIteration
 --
 
 * The `map` function can apply a function to every element in a list
-
 ```
 >>> list(map(sum,L))
 [6, 15, 24]
