@@ -13,7 +13,7 @@ class: center, middle
 
 ```
 curl https://raw.githubusercontent.com/andrewquitadamo/programming-fall2017/\
-			 gh-pages/data/sample.vcf -O
+gh-pages/data/sample.vcf -O
 ```
 
 --
