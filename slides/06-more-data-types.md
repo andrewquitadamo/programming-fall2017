@@ -517,3 +517,645 @@ Hello\nthere
 >>> '{:.5f}'.format(math.pi)
 '3.14159'
 ```
+
+---
+
+###Lists
+
+* Lists are ordered collections
+
+--
+
+* They are variable length (you can add and remove items in place) and mutable
+	   
+--
+
+* Lists can contain objects of different types, 
+
+--
+
+* You can nest lists
+
+---
+
+###List Operations
+
+* You can use `.append()` to add a single object to the end of the list
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.append(4)
+>>> L
+[1, 2, 3, 4]
+```
+--
+
+```Python
+>>> L.append([4,5])
+>>> L
+[1, 2, 3, [4, 5]]
+```
+--
+
+* `.extend()` can be used to add multiple objects from an iterable to the end of a list
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.extend([4,5])
+>>> L
+[1, 2, 3, 4, 5]
+```
+
+--
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.extend((4,5))
+>>> L
+[1, 2, 3, 4, 5]
+```
+
+---
+
+###List Operations (cont.)
+
+* `.insert()` can be used to add elements to a list in any location. It takes two arguments, the position and the object to be inserted
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.insert(0,10)
+>>> L
+[10, 1, 2, 3]
+```
+
+--
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.insert(2, [2,4])
+>>> L
+[1, 2, [2, 4], 3]
+```
+
+--
+
+* `.count()` can be used to count the number of occurrences of the search term
+
+```Python
+>>> L = [1,2,3,4,1,1]
+>>> L.count(1)
+3
+```
+
+---
+
+###List Operations (cont.)
+
+* `clear()` removes all elements from a list
+
+```Python
+>>> L = [1, 2, 3]
+>>> L.clear()
+>>> L
+[]
+```
+
+--
+
+* `.pop()` can be used to remove and return single elements. By default it returns the last element, although you can specify the element to remove.
+
+```Python
+>>> L = [1, 2, 3, 4, 5]
+>>> L.pop()
+5
+>>> L
+[1, 2, 3, 4]
+```
+
+--
+
+```Python
+>>> L = [1, 2, 3, 4, 5]
+>>> L.pop(2)
+3
+>>> L
+[1, 2, 4, 5]
+```
+
+---
+
+###List Operations (cont.)
+
+* `remove()` is like `pop()` except it does not return the element. You need to specify the element to remove
+
+```Python
+>>> L = [1, 2, 3, 4, 5]
+>>> L.remove(3)
+>>> L
+[1, 2, 4, 5]
+>>> L
+[1, 2, 4, 5]
+```
+
+--
+
+* You can also use `del` to  remove elements from a list
+
+```Python
+>>> L = [1, 2, 3, 4, 5]
+>>> del L[2]
+>>> L
+[1, 2, 4, 5]
+```
+
+--
+
+* While `.remove()` can only remove one element at a time, `del` can be used to remove a range of elements
+
+```Python
+>>> L = [1, 2, 3, 4, 5]
+>>> del L[1:3]
+>>> L
+[1, 4, 5]
+```
+
+---
+
+###Sorting Lists
+
+* The `.sort()` method can be used to sort a list in place
+
+```Python
+>>> L = [2,3,1,5,1,93,1,5,2,4]
+>>> L.sort()
+>>> L
+[1, 1, 1, 2, 2, 3, 4, 5, 5, 93]
+```
+
+--
+
+* In Python 3 you cannot sort lists that contain multiple types
+
+```Python
+>>> L = ['a', 1 , [4]]
+>>> L.sort()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: unorderable types: int() < str()
+```
+
+--
+
+* `sort()` can take optional arguments
+
+```Python
+>>> L = [2,3,1,5,1,93,1,5,2,4]
+>>> L.sort(reverse=True)
+>>> L
+[93, 5, 5, 4, 3, 2, 2, 1, 1, 1]
+```
+
+---
+
+###Sorting Lists (cont.)
+
+* The default `sort()` can return unexpected results if you want simple alphabetic sorting
+
+```Python
+>>> L = ['a', 'A', 'b', 'B']
+>>> L.sort()
+>>> L
+['A', 'B', 'a', 'b']
+```
+
+--
+
+* You can use a `key` argument to fix this
+
+```Python
+>>> L = ['B', 'A', 'b', 'a']
+>>> L.sort(key=lambda str: str.lower())
+>>> L
+['A', 'a', 'B', 'b']
+```
+
+--
+
+* In Python 3 the `lamba` syntax is required, but in Python 2 it isn't
+
+```Python
+>>> L = ['a', 'B', 'A', 'b']
+>>> L.sort(key=str.lower)
+>>> L
+>>> ['a', 'A', 'B', 'b']
+```
+
+---
+
+###`sorted()` vs `.sort()`
+
+* You can also use the `sorted()` function to sort lists
+
+--
+
+* Unlike `.sort()` `sorted()` does not change the underlying list, but returns a sorted list
+
+```Python
+>>> L = ['B', 'A', 'b', 'a']
+>>> sorted(L, key=lambda str: str.lower())
+['A', 'a', 'B', 'b']
+>>> L
+['B', 'A', 'b', 'a']
+```
+
+---
+
+###Dictionaries
+
+* Dictionaries are unordered collections that are accessed by key
+
+--
+
+* They are variable length, mutable and can be heterogeneous
+
+--
+
+* Python dictionaries are implemented as a hash table which allows for quick retrieval of values
+
+---
+
+###Dictionary Operations
+
+* `.keys()` can be used to get all the keys in a dictionary
+
+```Python
+>>> D = {'a':1,'b':2,'c':3}
+>>> list(D.keys())
+['b', 'a', 'c']
+```
+
+--
+
+* `.values()` returns the values in a dictionary
+
+```Python
+>>> list(D.values())
+[2, 1, 3]
+```
+
+--
+
+* `.items()` returns all key:value items in a dictionary
+
+```Python
+>>> list(D.items())
+[('b', 2), ('a', 1), ('c', 3)]
+```
+
+---
+
+###Dictionary Operations (cont.)
+
+* `.get()` can be used to access a value using a key
+
+```Python
+>>> D.get('b')
+2
+```
+
+--
+
+* `.get()` can take an optional default value which will be returned if the key does not exist in the dictionary
+
+```Python
+>>> D.get('g', 0)
+0
+```
+
+--
+
+* Dictionaries do not have a `.remove()` method, but you can use the `del` operator to get rid of entries
+
+```Python
+>>> del D['a']
+>>> D
+{'b': 2, 'c': 3}
+```
+
+--
+
+* The `.pop()` method removes and returns an entry, just like in lists
+
+```Python
+>>> D.pop('a')
+1
+>>> D
+{'b': 2, 'c': 3}
+```
+
+---
+
+###Dictionary Miscellany
+
+* Dictionaries can't be concatenated
+
+```Python
+>>> D = {'a':1,'b':2,'c':3}
+>>> D2 = {'z':26}
+>>> D + D2
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
+```
+
+--
+
+* Adding a new key creates an entry
+
+```Python
+>>> D = {'a':1,'b':2,'c':3}
+>>> D['z'] = 26
+>>> D
+{'z': 26, 'b': 2, 'a': 1, 'c': 3}
+```
+
+--
+
+* Keys don't have to be strings, they just have to be an immutable type
+
+```Python
+>>> D2 = {[0]:1}
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> D2 = {(0,):1}
+>>> D2
+{(0,): 1}
+```
+
+---
+
+###Tuples
+
+* Tuples are immutable, fixed length, ordered collections
+
+--
+
+* Tuples can contain heterogeneous types
+
+---
+
+###Tuple Literals
+
+* The parentheses in a tuple literal are not always necessary
+
+--
+
+```Python
+>>> T = (1, 2, 3, 4)
+>>> T
+(1, 2, 3, 4)
+>>> T = 1, 2, 3, 4
+>>> T
+(1, 2, 3, 4)
+```
+
+--
+
+* Single object tuples need a trailing comma
+
+```Python
+>>> T = (1,)
+>>> T 
+(1,)
+>>> T = 1,
+>>> T
+(1,)
+```
+
+---
+
+###Sorting Tuples
+
+* Tuples do not have a `.sort()` method
+
+```Python
+>>> T = (3, 1 , 4, 5, 10, 2, 4)
+>>> T.sort()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'sort'
+```
+
+--
+
+* You can use the `sorted()` function on tuples, however it will get a list, not a tuple
+
+```Python
+>>> sorted(T)
+[1, 2, 3, 4, 4, 5, 10]
+```
+
+---
+
+###Tuple Immutability
+
+* If a tuple contains a mutable object that object is still mutable even in the tuple
+
+```Python
+>>> T = ([1,2,3],2,4)
+>>> T[0][0] = 4
+>>> T
+([4, 2, 3], 2, 4)
+```
+
+--
+
+* The immutability provides some protection against unintentional changes
+
+--
+
+* This also means that tuples can be used as keys for dictionaries
+
+---
+
+###Named Tuples
+
+* In Python 2.7 and 3.x you can create namedtuples, which are similar to dictionaries
+
+```Python
+>>> from collections import namedtuple
+>>> record = namedtuple('record', ['name', 'age'])
+>>> andrew = record(name="Andrew", age=27)
+>>> andrew.name
+'Andrew'
+>>> andrew.age
+27
+```
+
+--
+
+* You access the elements in a named tuple by using the `.key` syntax
+
+---
+
+###Files
+
+* `open('filename')` creates a Python file object which you can use to interact with files
+
+--
+
+* If you do not specify `r`, or `w` the default is `r`
+
+--
+
+```Python
+file = open('filename')
+```
+
+--
+
+* `.read()` reads the entire file into a string
+
+```Python
+file = open('filename') 
+file.read()
+```
+
+--
+
+* You can save the result to a variable
+
+```Python
+file = open('filename') 
+input = file.read()
+```
+
+--
+
+* The `read()` method also takes an optional byte-length argument. Using this you can specify how many bytes to read. 
+
+```Python
+>>> file = open('filename')
+>>> file.read(256)
+```
+
+* You can call file.read() multiple times until you reach the end of the file
+
+---
+
+###File Operations
+
+* `readlines()` will read in a file as a list of lines. The results will include the newline characters.
+
+```Python
+>>> file = open('filename')
+>>> lines = file.readlines()
+>>> lines[0] #access the first line
+```
+
+--
+
+* `write()` can be used to write strings to a file. In Python 3 the `write()` method returns the number of characters written.
+
+```Python
+>>> file = open('filename','w')
+>>> file.write('Testline')
+8
+```
+
+--
+
+* `writelines()` can be used to write a list of strings to a file
+
+---
+###File Operations (cont.)
+
+* `.close()` will close the file object and flush any input
+
+```Python
+>>> file = open('filename','w')
+>>> file.write('Testline')
+8
+>>> file.close()
+```
+
+--
+
+* `.flush()` will write any output that is currently in the buffer
+
+--
+
+* `.seek()` can be used to jump to a position in a file. The `seek()` method takes a number of bytes as an argument
+
+```Python
+file = open('filename')
+>>> file.seek(10)
+10
+>>> file.read(10)
+```
+
+---
+
+###File Miscellany
+
+* Files are iterators, and can be used in loops
+
+--
+
+* Files are closed automatically by Python when the file object is garbage collected
+
+--
+
+* Python filenames are portable. You can type them using the / Unix syntax, and Python will translate them into the \ Windows syntax
+
+```Python
+file = open('C:/users/')
+```
+
+--
+
+* There is a `b` flag that can be added to `w` and `r`. This is used for binary files
+
+```Python
+file = open('filename', `rb`)
+```
+
+---
+
+###Pickle Objects
+
+* The `pickle` module allows you to save Python objects directly to files
+
+--
+
+* These objects can be read back in as objects
+
+--
+
+```Python
+>>> import pickle
+>>> D = {'a': 1, 'b': 2}
+>>> F = open('testfile','wb')
+>>> pickle.dump(D,F)
+>>> F.close()
+```
+
+--
+
+* If you were to look at the file using `cat` you would get a garbled looking mess
+
+```Python
+?}q(XbqKXaqKu.%
+```
+
+--
+
+* However you can read this back into Python
+
+```Python
+>>> F = open('testfile', 'rb')
+>>> D = pickle.load(F)
+>>> D
+{'b': 2, 'a': 1}
+```
