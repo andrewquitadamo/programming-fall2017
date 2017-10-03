@@ -34,6 +34,46 @@ gh-pages/data/sample.vcf -O
 
 ---
 
+###VCF Files
+
+* VCF (Variant Call Format) files are a standard bioinformatics file format
+
+--
+
+```
+#CHROM  POS ID  REF ALT QUAL    FILTER  INFO    FORMAT  HG00096	...
+```
+
+--
+
+* The first three columns contain information about the genetic variant (position and ID)
+
+--
+
+* Columns 4 and 5 contain the reference and alternative allele
+
+--
+
+* Column 6 contains the quality information
+
+--
+
+* Column 7 contains filtering information
+
+--
+
+* Column 8 contains general information
+
+--
+
+* Column 9 indicates what the format of the genotypes are GT for genotype, DP for read depth, GL for genotype likelihood etc.
+
+--
+
+* The entire VCF specification is at http://samtools.github.io/hts-specs/VCFv4.1.print
+
+---
+
 ###Open the file 
 
 * Write some code to open up `sample.vcf` and loop through the lines one by one
