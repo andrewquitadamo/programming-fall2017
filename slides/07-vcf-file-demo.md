@@ -74,6 +74,16 @@ gh-pages/data/sample.vcf -O
 
 ---
 
+###VCF Files (cont.)
+
+```
+1	2162106	UW_VH_21387	G	<CN0>	100	PASS	SVTYPE=DEL;CIEND=0,75;CIPOS=-91,
+0;END=2163200;CS=DEL_union;MC=BI_GS_DEL1_B4_P0003_50,SI_BD_25;AC=1;AF=0.00019968;NS=2504;
+AN=5008;EAS_AF=0.0;EUR_AF=0.0;AFR_AF=0.0008;AMR_AF=0.0;SAS_AF=0.0	GT	0|0	1|0	1|1
+```
+
+---
+
 ###Open the file 
 
 * Write some code to open up `sample.vcf` and loop through the lines one by one
