@@ -19,7 +19,8 @@ They are commands I've found useful, and is by no means an exhaustive list.
 **Instructions**  
 To follow along copy and paste 
 ```
-curl -LOk https://github.com/andrewquitadamo/programming-spring2017/archive/master.zip && unzip master.zip && cd programming-spring2017-master/data/
+curl -LOk https://github.com/andrewquitadamo/programming-spring2017/archive/master.zip \  
+&& unzip master.zip && cd programming-spring2017-master/data/
 ``` 
 into your terminal.
  
@@ -41,7 +42,7 @@ Use `pwd` in your current directory.
 The results should look something like:  
 
 ```
-/Users/andrewquitadamo/bioinf-ds/bioinformatics-skills-master/data/01-command-line
+/Users/andrewquitadamo/Development/repos/programming-fall2017/data/
 ```  
 
 ---
@@ -521,7 +522,7 @@ ssh username@server.address
 
 Example:
 ```
-ssh username@viper.urc.uncc.edu
+ssh username@mamba.urc.uncc.edu
 ```  
 
 ---
@@ -543,10 +544,6 @@ Download file:
 ```
 wget ftp://url/path/to/file
 ```  
-
---
-**Instructions**
-Use `wget` to download the chromosome Y FASTA file from `ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chrY.fa.gz` 
 
 ---
 
