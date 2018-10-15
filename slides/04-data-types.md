@@ -346,7 +346,7 @@ line.rstrip().split()
 ['a', 'b']
 ```
 
---
+---
 * List bounding issues
 
 ```Python
