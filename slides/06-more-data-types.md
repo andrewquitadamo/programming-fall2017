@@ -461,7 +461,7 @@ Hello\nthere
 
 ###String Formatting (cont.)
 
-* The new style is available in Python 3 and Python 3.7
+* The new style is available in Python 3 and Python 2.7
 
 ```Python
 >>> 'Hello, {}'.format(name)
@@ -986,11 +986,11 @@ AttributeError: 'tuple' object has no attribute 'sort'
 ```Python
 >>> from collections import namedtuple
 >>> record = namedtuple('record', ['name', 'age'])
->>> andrew = record(name="Andrew", age=27)
+>>> andrew = record(name="Andrew", age=28)
 >>> andrew.name
 'Andrew'
 >>> andrew.age
-27
+28
 ```
 
 --
