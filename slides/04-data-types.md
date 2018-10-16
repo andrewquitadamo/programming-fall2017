@@ -306,10 +306,6 @@ line.rstrip().split()
 <_sre.SRE_Match object; span=(1, 3), match='pa'>
 ```
 
---
-
-* We will cover regular expressions in lab next week
-
 ---
 
 ###Lists
@@ -347,6 +343,8 @@ line.rstrip().split()
 ```
 
 ---
+###Lists (cont.)
+
 * List bounding issues
 
 ```Python
