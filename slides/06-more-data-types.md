@@ -53,11 +53,11 @@ class: center, middle
 
 ###Copying Objects
 
-* You cannot simply create copies of immutable objects by creating a new variable
+* You cannot simply create copies of mutable objects by creating a new variable
 
 --
 
-* We've seen this with lists, and you can use the `a = b[:]` syntax to avoid it. However with dictionaries and other immutable objects we need a way to create a copy
+* We've seen this with lists, and you can use the `a = b[:]` syntax to avoid it. However with dictionaries and other mutable objects we need a way to create a copy
 
 ```Python
 >>> D 
