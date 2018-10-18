@@ -246,7 +246,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 --
 
-* This is due to the way numbers are represented internally by Python
+* This is due to the way decimals are represented internally in binary
 
 --
 
