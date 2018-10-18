@@ -53,11 +53,11 @@ class: center, middle
 
 ###Copying Objects
 
-* You cannot simply create copies of immutable objects by creating a new variable
+* You cannot simply create copies of mutable objects by creating a new variable
 
 --
 
-* We've seen this with lists, and you can use the `a = b[:]` syntax to avoid it. However with dictionaries and other immutable objects we need a way to create a copy
+* We've seen this with lists, and you can use the `a = b[:]` syntax to avoid it. However with dictionaries and other mutable objects we need a way to create a copy
 
 ```Python
 >>> D 
@@ -87,7 +87,7 @@ class: center, middle
 * You can use the `id()` function to check whether two objects use the same memory reference. In CPython `id()` returns the memory location of an object
 
 ```Python
->>> L = [1,2,3]
+>>> L = [1, 2, 3]
 >>> L2 = L
 >>> L == L2
 True
@@ -246,7 +246,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 --
 
-* This is due to the way numbers are represented internally by Python
+* This is due to the way decimals are represented internally in binary
 
 --
 
@@ -278,11 +278,11 @@ Decimal('0.4')
 
 ```Python
 >>> from fractions import Fraction
->>> Fraction(1,2)
+>>> Fraction(1, 2)
 Fraction(1, 2)
->>> Fraction(1,2) * 2
+>>> Fraction(1, 2) * 2
 Fraction(1, 1)
->>> Fraction(1,2) / 2
+>>> Fraction(1, 2) / 2
 Fraction(1, 4)
 >>> Fraction(1, 2) + Fraction(1, 9)
 Fraction(11, 18)
@@ -338,9 +338,9 @@ long
 --
 
 ```Python
->>> str.maketrans('ACTG','TGAC')
+>>> str.maketrans('ACTG', 'TGAC')
 {65: 84, 67: 71, 84: 65, 71: 67}
->>> tb = str.maketrans('ACTG','TGAC')
+>>> tb = str.maketrans('ACTG', 'TGAC')
 >>> 'ACTG'.translate(tb)
 'TGAC'
 ```
@@ -350,7 +350,7 @@ long
 * Strings also have a `.join()` method that takes a list as an argument. You can use this to combine a list with a delimiter
 
 ```Python
->>> list = ['This','is','a','list']
+>>> list = ['This', 'is', 'a', 'list']
 >>> " ".join(list)
 'This is a list'
 ```
@@ -551,7 +551,7 @@ Hello\nthere
 --
 
 ```Python
->>> L.append([4,5])
+>>> L.append([4, 5])
 >>> L
 [1, 2, 3, [4, 5]]
 ```
@@ -561,7 +561,7 @@ Hello\nthere
 
 ```Python
 >>> L = [1, 2, 3]
->>> L.extend([4,5])
+>>> L.extend([4, 5])
 >>> L
 [1, 2, 3, 4, 5]
 ```
@@ -570,7 +570,7 @@ Hello\nthere
 
 ```Python
 >>> L = [1, 2, 3]
->>> L.extend((4,5))
+>>> L.extend((4, 5))
 >>> L
 [1, 2, 3, 4, 5]
 ```
@@ -583,7 +583,7 @@ Hello\nthere
 
 ```Python
 >>> L = [1, 2, 3]
->>> L.insert(0,10)
+>>> L.insert(0, 10)
 >>> L
 [10, 1, 2, 3]
 ```
@@ -592,7 +592,7 @@ Hello\nthere
 
 ```Python
 >>> L = [1, 2, 3]
->>> L.insert(2, [2,4])
+>>> L.insert(2, [2, 4])
 >>> L
 [1, 2, [2, 4], 3]
 ```
@@ -602,7 +602,7 @@ Hello\nthere
 * `.count()` can be used to count the number of occurrences of the search term
 
 ```Python
->>> L = [1,2,3,4,1,1]
+>>> L = [1, 2, 3, 4, 1, 1]
 >>> L.count(1)
 3
 ```
@@ -686,7 +686,7 @@ Hello\nthere
 * The `.sort()` method can be used to sort a list in place
 
 ```Python
->>> L = [2,3,1,5,1,93,1,5,2,4]
+>>> L = [2, 3, 1, 5, 1, 93, 1, 5, 2, 4]
 >>> L.sort()
 >>> L
 [1, 1, 1, 2, 2, 3, 4, 5, 5, 93]
@@ -709,7 +709,7 @@ TypeError: unorderable types: int() < str()
 * `sort()` can take optional arguments
 
 ```Python
->>> L = [2,3,1,5,1,93,1,5,2,4]
+>>> L = [2, 3, 1, 5, 1, 93, 1, 5, 2, 4]
 >>> L.sort(reverse=True)
 >>> L
 [93, 5, 5, 4, 3, 2, 2, 1, 1, 1]
@@ -789,7 +789,7 @@ TypeError: unorderable types: int() < str()
 * `.keys()` can be used to get all the keys in a dictionary
 
 ```Python
->>> D = {'a':1,'b':2,'c':3}
+>>> D = {'a':1, 'b':2, 'c':3}
 >>> list(D.keys())
 ['b', 'a', 'c']
 ```
@@ -860,7 +860,7 @@ TypeError: unorderable types: int() < str()
 * Dictionaries can't be concatenated
 
 ```Python
->>> D = {'a':1,'b':2,'c':3}
+>>> D = {'a':1, 'b':2, 'c':3}
 >>> D2 = {'z':26}
 >>> D + D2
 Traceback (most recent call last):
@@ -873,7 +873,7 @@ TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 * Adding a new key creates an entry
 
 ```Python
->>> D = {'a':1,'b':2,'c':3}
+>>> D = {'a':1, 'b':2, 'c':3}
 >>> D['z'] = 26
 >>> D
 {'z': 26, 'b': 2, 'a': 1, 'c': 3}
@@ -940,7 +940,7 @@ TypeError: unhashable type: 'list'
 * Tuples do not have a `.sort()` method
 
 ```Python
->>> T = (3, 1 , 4, 5, 10, 2, 4)
+>>> T = (3, 1, 4, 5, 10, 2, 4)
 >>> T.sort()
 Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
@@ -963,7 +963,7 @@ AttributeError: 'tuple' object has no attribute 'sort'
 * If a tuple contains a mutable object that object is still mutable even in the tuple
 
 ```Python
->>> T = ([1,2,3],2,4)
+>>> T = ([1, 2, 3], 2, 4)
 >>> T[0][0] = 4
 >>> T
 ([4, 2, 3], 2, 4)
@@ -1059,7 +1059,7 @@ input = file.read()
 * `write()` can be used to write strings to a file. In Python 3 the `write()` method returns the number of characters written.
 
 ```Python
->>> file = open('filename','w')
+>>> file = open('filename', 'w')
 >>> file.write('Testline')
 8
 ```
@@ -1074,7 +1074,7 @@ input = file.read()
 * `.close()` will close the file object and flush any input
 
 ```Python
->>> file = open('filename','w')
+>>> file = open('filename', 'w')
 >>> file.write('Testline')
 8
 >>> file.close()
@@ -1136,8 +1136,8 @@ file = open('filename', `rb`)
 ```Python
 >>> import pickle
 >>> D = {'a': 1, 'b': 2}
->>> F = open('testfile','wb')
->>> pickle.dump(D,F)
+>>> F = open('testfile', 'wb')
+>>> pickle.dump(D, F)
 >>> F.close()
 ```
 
